@@ -8,17 +8,17 @@
 
     <item
         android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:icon="@drawable/ic_baseline_add_24"
         android:title="@string/title_createGroup" />
 
     <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_notifications_black_24dp"
+        android:id="@+id/navigation_join"
+        android:icon="@drawable/ic_baseline_group_24"
         android:title="@string/title_joinGroup" />
 
     <item
         android:id="@+id/navigation_highscores"
-        android:icon="@drawable/ic_notifications_black_24dp"
+        android:icon="@drawable/ic_baseline_emoji_events_24"
         android:title="@string/title_highscores" />
 
 </menu>

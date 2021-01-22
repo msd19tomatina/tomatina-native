@@ -18,8 +18,8 @@
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.tomatina.ui.notifications.NotificationsFragment"
+        android:id="@+id/navigation_join"
+        android:name="com.example.tomatina.ui.join.JoinFragment"
         android:label="@string/title_joinGroup"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_join" />
 </navigation>
