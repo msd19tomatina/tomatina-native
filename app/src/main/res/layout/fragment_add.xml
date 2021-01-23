@@ -6,6 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".ui.add.AddFragment">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:alpha="0.25"
+        android:scaleType="centerCrop"
+
+        android:src="@drawable/tomatinabg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -83,7 +96,7 @@
         android:layout_width="109dp"
         android:layout_height="88dp"
         android:layout_marginTop="24dp"
-        android:background="@color/white"
+        android:background="@android:color/transparent"
         android:scaleType="centerInside"
         android:src="@drawable/ic_outline_check_circle_24"
         android:adjustViewBounds="true"
