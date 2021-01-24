@@ -7,12 +7,16 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.os.CountDownTimer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.tomatina.R;
@@ -64,6 +68,26 @@ public class TimerFragment extends Fragment {
                 startTimer();
             }
         });
+
+        String[] focusGroups = {
+                "Isi            " + "27",
+                "Robert         " + "47",
+                "Martin         " + "08",
+                "Test           " + "88",
+        };
+
+        ListView lw = (ListView) view.findViewById(R.id.users);
+
+        // this adapter is needed so that listView knows what to display
+        ArrayAdapter<String> listViewAdapter = new ArrayAdapter<String>(
+                getActivity(),
+                android.R.layout.simple_expandable_list_item_1,
+                focusGroups
+        );
+
+        lw.setAdapter(listViewAdapter);
+
+
         return view;
     }
 

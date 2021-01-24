@@ -23,6 +23,7 @@ import com.example.tomatina.R;
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
+    public String group;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {

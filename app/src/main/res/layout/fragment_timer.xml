@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="Meine Gruppen"
+        android:text=""
         android:textColor="#FF121212"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -69,10 +69,9 @@
 
     <ListView
         android:id="@+id/users"
-        android:layout_width="220dp"
-        android:layout_height="225dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:background="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
