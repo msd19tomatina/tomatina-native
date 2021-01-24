@@ -100,12 +100,14 @@
         android:layout_height="wrap_content"
         android:text="Achtung! Stop löscht \n deinen Fortschritt"
         android:textSize="25dp"
+        android:textAlignment="center"
         android:background="@android:color/transparent"
         android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="@+id/button_start_pause"
         app:layout_constraintStart_toStartOf="@+id/button_start_pause"
         app:layout_constraintTop_toBottomOf="@+id/button_start_pause"
-        android:visibility="gone"/>
+        android:visibility="gone"
+        android:gravity="center_horizontal" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

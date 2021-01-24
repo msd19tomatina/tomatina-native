@@ -71,8 +71,8 @@ public class TimerFragment extends Fragment {
         // List Array of Strings
         String[] focusGroups = {
                 "Martin           " + "                 " + "27",
-                "Robert           " + "                 " + "3",
-                "Isi              " + "                 " + " 15",
+                "Robert           " + "                 " + "03",
+                "Isi              " + "                 " + "     15",
         };
 
         ListView lw = (ListView) view.findViewById(R.id.users);

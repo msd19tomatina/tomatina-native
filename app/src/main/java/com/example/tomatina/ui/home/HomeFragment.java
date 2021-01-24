@@ -71,7 +71,7 @@ public class HomeFragment extends Fragment {
                 ((TextView)arg1).setText("Hey, I've just been tapped on!");
 
                 // navigate to fragment_timer
-                // Navigation.findNavController(arg1).navigate(R.id.navigation_timer);
+                 Navigation.findNavController(arg1).navigate(R.id.navigation_timer);
 
 
 
