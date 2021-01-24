@@ -5,10 +5,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,7 +20,11 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.tomatina.MainActivity;
 import com.example.tomatina.R;
+import com.example.tomatina.ui.timer.TimerFragment;
+
+import java.util.Timer;
 
 public class HomeFragment extends Fragment {
 
@@ -31,10 +37,10 @@ public class HomeFragment extends Fragment {
 
         // List Array of Strings
         String[] focusGroups = {
-                "Gruppe 1            " + "03/15            " + "27",
-                "Gruppe 2            " + "11/17            " + "47",
-                "Gruppe 3            " + "18/17            " + "08",
-                "Gruppe 4            " + "40/75            " + "88",
+                "    Gruppe 1            " + "03/15            " + "27",
+                "    Gruppe 2            " + "11/17            " + "47",
+                "    Gruppe 3            " + "18/17            " + "08",
+                "    Gruppe 4            " + "40/75            " + "88",
         };
 
         ListView lw = (ListView) root.findViewById(R.id.list);
@@ -55,6 +61,7 @@ public class HomeFragment extends Fragment {
                 Navigation.findNavController(arg1).navigate(R.id.navigation_timer);
             }
         } );
+
 
 
         return root;
