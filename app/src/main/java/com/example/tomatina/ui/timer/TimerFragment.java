@@ -9,6 +9,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.os.CountDownTimer;
 import android.transition.TransitionManager;
@@ -106,17 +107,13 @@ public class TimerFragment extends Fragment {
                 //if textView is gone make it visible, if visible make it gone
                 infoBox.setVisibility(visible[0] ? View.VISIBLE : View.GONE);
 
-            if(mTimerRunning)
+                if (mTimerRunning) {
+                    pauseTimer();
+                    resetTimer();
+                } else {
+                    startTimer();
 
-            {
-                pauseTimer();
-                resetTimer();
-            } else
-
-            {
-                startTimer();
-
-            }
+                }
             }
         });
 
