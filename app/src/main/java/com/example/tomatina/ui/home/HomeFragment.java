@@ -61,6 +61,9 @@ public class HomeFragment extends Fragment {
                 Navigation.findNavController(arg1).navigate(R.id.navigation_timer);
             }
         } );
+
+
+
         return root;
     }
 }
