@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/fragment_container_view_tag"
     android:layout_height="match_parent"
     tools:context=".ui.join.JoinFragment">
 
@@ -17,6 +18,7 @@
 
         android:src="@drawable/tomatinabg"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,7 +39,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="Dammit"
+
+        android:text="Gruppe 1"
         android:textColor="#FF121212"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -69,12 +72,40 @@
         app:layout_constraintStart_toStartOf="@+id/text_view_countdown"
         app:layout_constraintTop_toBottomOf="@+id/text_view_countdown" />
 
+    <Button
+        android:id="@+id/button_reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@android:color/holo_red_dark"
+        android:textColor="@android:color/white"
+        android:text="start"
+        app:layout_constraintEnd_toEndOf="@+id/text_view_countdown"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="@+id/text_view_countdown"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_countdown" />
+
     <ListView
         android:id="@+id/users"
-        android:layout_width="220dp"
-        android:layout_height="225dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Achtung! Stop löscht \n deinen Fortschritt"
+        android:textSize="25dp"
+        android:background="@android:color/holo_red_dark"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="@+id/button_start_pause"
+        app:layout_constraintStart_toStartOf="@+id/button_start_pause"
+        app:layout_constraintTop_toBottomOf="@+id/button_start_pause"
+        android:visibility="gone"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

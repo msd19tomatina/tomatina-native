@@ -1,14 +1,18 @@
 package com.example.tomatina.ui.timer;
 
+import androidx.annotation.RequiresApi;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.os.CountDownTimer;
+import android.transition.TransitionManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +31,9 @@ public class TimerFragment extends Fragment {
 
     private TextView mTextViewCountDown;
     private Button mButtonStartPause;
-
+    private Button mButtonReset;
+    private TextView infoBox;
+    ViewGroup tContainer;
 
     private CountDownTimer mCountDownTimer;
 
@@ -43,6 +49,8 @@ public class TimerFragment extends Fragment {
     public TimerFragment(TextView mTextViewCountDown, Button mButtonStartPause) {
         this.mTextViewCountDown = mTextViewCountDown;
         this.mButtonStartPause = mButtonStartPause;
+        this.mButtonReset = mButtonReset;
+        this.infoBox = infoBox;
     }
 
     public static TimerFragment newInstance() {
@@ -81,15 +89,42 @@ public class TimerFragment extends Fragment {
 
         mTextViewCountDown = view.findViewById(R.id.text_view_countdown);
         mButtonStartPause = view.findViewById(R.id.button_start_pause);
+        mButtonReset = view.findViewById(R.id.button_reset);
 
+        infoBox = view.findViewById(R.id.textView5);
+        tContainer = view.findViewById(R.id.fragment_container_view_tag);
+        final boolean[] visible = new boolean[1];
 
-        mButtonStartPause.setOnClickListener(v -> {
-            if (mTimerRunning) {
-                pauseTimer();
-            } else {
-                startTimer();
+        mButtonStartPause.setOnClickListener(new View.OnClickListener() {
+            // visibility here is gone (0).
+            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+            public void onClick(View v) {
+                TransitionManager.beginDelayedTransition(tContainer);
+                // on button click first show space to textView
+                // make the visibility from gone to invisible
+                visible[0] = !visible[0];
+                //after making space
+                //if textView is gone make it visible, if visible make it gone
+                infoBox.setVisibility(visible[0] ? View.VISIBLE : View.GONE);
+
+                if (mTimerRunning) {
+                    pauseTimer();
+                    resetTimer();
+                } else {
+                    startTimer();
+
+                }
             }
         });
+
+        mButtonReset.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                resetTimer();
+
+            }
+        });
+        updateCountDownText();
         return view;
     }
 
@@ -99,8 +134,6 @@ public class TimerFragment extends Fragment {
         mViewModel = new ViewModelProvider(this).get(TimerViewModel.class);
         // TODO: Use the ViewModel
     }
-
-
 
 
     private void startTimer() {
@@ -115,6 +148,7 @@ public class TimerFragment extends Fragment {
             public void onFinish() {
                 mTimerRunning = false;
                 mButtonStartPause.setText("Start");
+                mButtonReset.setVisibility(View.VISIBLE);
 
             }
         }.start();
@@ -128,8 +162,15 @@ public class TimerFragment extends Fragment {
         mCountDownTimer.cancel();
         mTimerRunning = false;
         mTimeLeftInMillis = START_TIME_IN_MILLIS;
-        mButtonStartPause.setText("Neu beginnen");
+        mButtonStartPause.setText("Start");
+        mButtonReset.setVisibility(View.VISIBLE);
+    }
 
+    private void resetTimer() {
+        mTimeLeftInMillis = START_TIME_IN_MILLIS;
+        updateCountDownText();
+        mButtonReset.setVisibility(View.INVISIBLE);
+        mButtonStartPause.setVisibility(View.VISIBLE);
     }
 
 
