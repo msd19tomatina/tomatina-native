@@ -9,7 +9,7 @@
         android:id="@+id/navigation_home"
         android:name="com.example.tomatina.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_navigation_home_to_navigation_timer"
             app:destination="@id/navigation_timer" />
@@ -29,10 +29,10 @@
         android:id="@+id/navigation_join"
         android:name="com.example.tomatina.ui.join.JoinFragment"
         android:label="@string/title_joinGroup"
-        tools:layout="@layout/fragment_join" >
-    <action
-        android:id="@+id/action_navigation_join_to_navigation_timer"
-        app:destination="@id/navigation_timer" />
+        tools:layout="@layout/fragment_join">
+        <action
+            android:id="@+id/action_navigation_join_to_navigation_timer"
+            app:destination="@id/navigation_timer" />
     </fragment>
 
     <fragment
