@@ -35,12 +35,20 @@ public class HomeFragment extends Fragment {
         homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
+        // Text for groups
+        String[] groupNames = {
+          "Gruppe 1",
+          "Gruppe 2",
+          "Gruppe 3",
+          "Gruppe 4"
+        };
+
         // List Array of Strings
         String[] focusGroups = {
-                "    Gruppe 1            " + "03/15            " + "27",
-                "    Gruppe 2            " + "11/17            " + "47",
-                "    Gruppe 3            " + "18/17            " + "08",
-                "    Gruppe 4            " + "40/75            " + "88",
+                "Gruppe 1            " + "03/15            " + "27",
+                "Gruppe 2            " + "11/17            " + "47",
+                "Gruppe 3            " + "18/17            " + "08",
+                "Gruppe 4            " + "40/75            " + "88",
         };
 
         ListView lw = (ListView) root.findViewById(R.id.list);
@@ -56,9 +64,16 @@ public class HomeFragment extends Fragment {
         lw.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
-            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
-                                    long arg3) {
-                Navigation.findNavController(arg1).navigate(R.id.navigation_timer);
+            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+
+                // in fragment_timer change text for the group
+                ((TextView)arg1).setText("Hey, I've just been tapped on!");
+
+                // navigate to fragment_timer
+                // Navigation.findNavController(arg1).navigate(R.id.navigation_timer);
+
+
+
             }
         } );
         return root;
