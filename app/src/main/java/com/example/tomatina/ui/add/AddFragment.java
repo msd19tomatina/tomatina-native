@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
 import com.example.tomatina.R;
 
@@ -25,8 +26,15 @@ public class AddFragment extends Fragment {
                 new ViewModelProvider(this).get(AddViewModel.class);
         View root = inflater.inflate(R.layout.fragment_add, container, false);
 
-        ImageButton submitAdd = root.findViewById(R.id.imageView);
 
+        ImageButton ib = (ImageButton) root.findViewById(R.id.button);
+        ib.setOnClickListener(new View.OnClickListener() {
+                                  @Override
+                                  public void onClick(View v) {
+                                      Navigation.findNavController(root).navigate(R.id.navigation_timer);
+                                  }
+                              }
+        );
 
         return root;
     }
