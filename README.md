@@ -1,6 +1,6 @@
 # Tomatina
 
-Assignment for mobile platforms at FH JOANNEUM.
+Assignment for mobile platforms at FH JOANNEUM. <br>
 Native Android Application
 
 Authors:
@@ -20,7 +20,7 @@ To test the application you will need to have android studio or a similar IDE in
 Download or clone this repository, open the project on your IDE, build the project and start an emulator. <br>
 We recommend Android Studio as most things are already implemented there.
 
-## Where do the awesome tomatos come from
+## Where do the awesome tomatoes come from
 The artist Vanja Vikalo / LINNCH kindly allowed us to use his art for the icons and background images.
 
 http://linnch.com/
